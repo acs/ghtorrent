@@ -74,14 +74,16 @@ def fetch_projects(es_index, db_con, language=None):
     # For debugging
     # LIMIT 100000
     logging.info("Getting projects: %s" % projects_sql)
-    db_cursor = db_con.cursor()
+    db_cursor = db_con.cursor(pymysql.cursors.SSCursor)
     db_cursor.execute(projects_sql)
     logging.info("SQL query finished")
 
 
     for project_row in db_cursor:
         api_url = project_row[4]
-        [api, owner, repo] = api_url.rsplit("/", 2)
+        [api, owner, repo] = [None, None, None]
+        if api_url:
+            [api, owner, repo] = api_url.rsplit("/", 2)
         project_url = GITHUB_URL + "/%s/%s" % (owner, repo)
         project_json = {
             "created_at": project_row[0],
