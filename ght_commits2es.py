@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copy data from GHTorrent to Elasticsearch
+# Copy data from GHTorrent commits to Elasticsearch
 #
 # Copyright (C) Bitergia
 #
@@ -31,7 +31,7 @@ import pymysql
 from elasticsearch import helpers, Elasticsearch
 
 HTTPS_CHECK_CERT = False
-NUM_PROJECTS = 0
+NUM_COMMITS = 0
 BULK_CHUNK_SIZE = 10000
 GITHUB_URL = "https://github.com"
 
@@ -46,84 +46,71 @@ def get_params():
     parser.add_argument('--db-name', default='gh-torrent', help='GHTorrent database (gh-torrent default)')
     parser.add_argument('--db-user', default='root', help='GHTorrent database user (root default)')
     parser.add_argument('--db-passwd', default='', help='GHTorrent database password ("" default)')
-    parser.add_argument('--language', default='', help='Programming language to be published')
 
     return parser.parse_args()
 
-def fetch_projects(es_index, db_con, language=None):
+def fetch_commits(es_index, db_con):
     """
-    Fetch projects
+    Fetch commits adding information about the author login and org and the repository URL
     :param es_index: Elasticsearch index in which to publish the data
     :param db_con: connection to GHTorrent database
-    :param language: projects programming language to be used
-    :return: a dict with the project info to be added to es_index
+    :return: a dict with the commit info to be added to es_index
     """
 
-    global NUM_PROJECTS
+    global NUM_COMMITS
 
-    projects_sql = """
-        SELECT created_at, name, language, forked_from, url, owner_id, deleted
-        FROM projects
-    """
+    commits_table = "commits2018"  # Working only with commits in 2018
 
-    if language:
-        projects_sql += ' WHERE language="%s"' % language
+    commits_sql = """
+        SELECT  c.created_at, sha, login as author_login, company, url
+        FROM %s c, projects p, users u
+        WHERE c.project_id = p.id AND c.author_id = u.id
+    """ % commits_table
 
-    # For removing the forks
-    # WHERE forked_from IS NULL
-    # For debugging
-    # LIMIT 100000
-    logging.info("Getting projects: %s" % projects_sql)
+    logging.info("Getting commits: %s" % commits_sql)
     db_cursor = db_con.cursor(pymysql.cursors.SSCursor)
-    db_cursor.execute(projects_sql)
+    db_cursor.execute(commits_sql)
     logging.info("SQL query finished")
 
-
-    for project_row in db_cursor:
-        api_url = project_row[4]
+    for commit_row in db_cursor:
+        api_url = commit_row[4]
         [api, owner, repo] = [None, None, None]
         if api_url:
             [api, owner, repo] = api_url.rsplit("/", 2)
         project_url = GITHUB_URL + "/%s/%s" % (owner, repo)
-        project_json = {
-            "created_at": project_row[0],
-            "name": project_row[1],
-            "language": project_row[2],
-            "forked_from": project_row[3],
-            "api_url": api_url,
-            "url": project_url,
-            "owner_id": project_row[5],
-            "deleted": project_row[6],
+        commit_json = {
+            "created_at": commit_row[0],
+            "sha": commit_row[1],
+            "author_login": commit_row[2],
+            "author_org": commit_row[3],
+            "url": project_url
         }
         item = {
             "_index": es_index,
             "_type": "item",
-            "_source": project_json
+            "_source": commit_json
         }
-        NUM_PROJECTS += 1
+        NUM_COMMITS += 1
         yield item
 
 
-
-
-def publish_projects(es_url, es_index, db_con, language):
+def publish_commits(es_url, es_index, db_con):
     """
-    Publish all the scores for the metrics in assessment
+    Publish all the commits
 
     :param es_url: URL for Elasticsearch
     :param es_index: index in Elasticsearch
     :param db_con: connection to GHTorrent database
-    :param language: projects programming language to be used
     :return:
     """
 
-    global NUM_PROJECTS
+    global NUM_COMMITS
 
     es_conn = Elasticsearch([es_url], timeout=100, verify_certs=HTTPS_CHECK_CERT)
 
-    NUM_PROJECTS = 0
-    helpers.bulk(es_conn, fetch_projects(es_index, db_con, language), chunk_size=BULK_CHUNK_SIZE)
-    logging.info("Total projects published in %s: %i", es_index, NUM_PROJECTS)
+    NUM_COMMITS = 0
+    helpers.bulk(es_conn, fetch_commits(es_index, db_con), chunk_size=BULK_CHUNK_SIZE)
+    logging.info("Total commits published in %s: %i", es_index, NUM_COMMITS)
 
 
 def db_connect(name, user, passwd, host='localhost', port=3306):
@@ -164,4 +151,4 @@ if __name__ == '__main__':
 
     db_con = db_connect(args.db_name, args.db_user, args.db_passwd)
 
-    publish_projects(args.elastic_url, args.index, db_con, args.language)
+    publish_commits(args.elastic_url, args.index, db_con)
