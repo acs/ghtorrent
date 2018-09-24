@@ -1,0 +1,360 @@
+﻿"language.keyword: Descending",Count
+JavaScript,"10,256,258"
+Java,"6,557,316"
+Python,"5,173,391"
+Ruby,"3,307,957"
+HTML,"3,123,575"
+PHP,"2,841,279"
+"C++","2,178,517"
+CSS,"2,098,957"
+C,"1,850,115"
+"C#","1,626,422"
+Shell,"1,429,285"
+"Objective-C","1,199,378"
+Go,"918,319"
+Swift,"580,348"
+"Jupyter Notebook","564,048"
+R,"482,497"
+TypeScript,"465,490"
+Scala,"273,278"
+CoffeeScript,"220,245"
+Perl,"213,614"
+Lua,"209,482"
+VimL,"188,476"
+TeX,"181,660"
+Matlab,"153,364"
+Makefile,"150,674"
+Vue,"140,705"
+Haskell,"125,481"
+Rust,"122,914"
+Clojure,"122,001"
+PowerShell,"110,579"
+Groovy,"106,868"
+"Emacs Lisp","104,892"
+Kotlin,"95,021"
+Arduino,"90,607"
+Erlang,"71,833"
+Elixir,"62,657"
+"Vim script","57,747"
+Puppet,"55,838"
+Assembly,"48,897"
+ActionScript,"48,119"
+"Visual Basic","46,130"
+ColdFusion,"41,296"
+Julia,"38,256"
+Processing,"37,364"
+Dart,"35,254"
+Pascal,"34,946"
+OCaml,"30,709"
+CMake,"30,092"
+Batchfile,"28,561"
+XSLT,"28,198"
+ASP,"26,839"
+ApacheConf,"26,497"
+"Common Lisp","24,977"
+"F#","23,829"
+HCL,"21,624"
+Eagle,"19,472"
+D,"19,226"
+Scheme,"17,530"
+Verilog,"16,780"
+Smarty,"15,429"
+Haxe,"15,091"
+Elm,"14,622"
+Apex,"13,828"
+Cuda,"13,207"
+FORTRAN,"13,060"
+Dockerfile,"12,717"
+PLpgSQL,"12,605"
+VHDL,"12,485"
+Nginx,"12,281"
+Racket,"11,929"
+"Objective-C++","11,055"
+QML,"10,785"
+Prolog,"10,278"
+"GCC Machine Description","10,200"
+Groff,"9,917"
+SaltStack,"9,586"
+SQF,"9,031"
+PLSQL,"8,953"
+AutoHotkey,"8,754"
+Logos,"8,372"
+XML,"8,320"
+Fortran,"7,967"
+Tcl,"7,757"
+Roff,"7,527"
+GLSL,"7,254"
+Mathematica,"7,219"
+Crystal,"7,182"
+Vala,"6,925"
+PureScript,"6,917"
+PostScript,"6,794"
+KiCad,"6,548"
+Rascal,"6,546"
+OpenSCAD,"6,445"
+SourcePawn,"6,402"
+Perl6,"6,311"
+SQLPL,"5,883"
+DM,"5,616"
+"Protocol Buffer","5,379"
+"OpenEdge ABL","5,116"
+"DIGITAL Command Language","4,552"
+Nix,"4,375"
+AppleScript,"4,329"
+Smalltalk,"4,266"
+"Standard ML","4,214"
+NSIS,"3,911"
+AutoIt,"3,886"
+BitBake,"3,885"
+Coq,"3,513"
+"Web Ontology Language","3,387"
+LiveScript,"3,380"
+GDScript,"3,369"
+FreeMarker,"3,355"
+Stata,"3,078"
+IDL,"3,076"
+Max,"2,994"
+LabVIEW,"2,673"
+Liquid,"2,636"
+ShaderLab,"2,612"
+"API Blueprint","2,600"
+Nimrod,"2,564"
+SystemVerilog,"2,542"
+Hack,"2,465"
+Ada,"2,403"
+SuperCollider,"2,365"
+Smali,"2,332"
+SAS,"2,270"
+"Pure Data","2,261"
+Delphi,"2,076"
+Nim,"2,073"
+M,"2,062"
+Yacc,"2,042"
+WebAssembly,"2,031"
+Handlebars,"1,977"
+"Game Maker Language","1,939"
+"Objective-J","1,923"
+XQuery,"1,859"
+Awk,"1,809"
+M4,"1,762"
+"Perl 6","1,690"
+ANTLR,"1,677"
+Cucumber,"1,566"
+PureBasic,"1,561"
+Gosu,"1,539"
+Rebol,"1,527"
+RAML,"1,522"
+"AGS Script","1,472"
+QMake,"1,459"
+Scilab,"1,457"
+PAWN,"1,434"
+"Inno Setup","1,400"
+"1C Enterprise","1,374"
+Xtend,"1,358"
+nesC,"1,325"
+Gherkin,"1,287"
+Lasso,"1,276"
+Agda,"1,272"
+Forth,"1,268"
+GAP,"1,239"
+ABAP,"1,199"
+Lex,"1,197"
+NetLogo,"1,190"
+HaXe,"1,178"
+xBase,"1,150"
+Idris,"1,147"
+CartoCSS,"1,137"
+AMPL,"1,103"
+LookML,"1,099"
+Squirrel,"1,084"
+MoonScript,"1,044"
+HLSL,"1,040"
+Diff,"1,003"
+RobotFramework,992
+Modelica,952
+Eiffel,930
+Gnuplot,929
+"Gettext Catalog",928
+Bro,924
+Solidity,914
+DOT,851
+Brightscript,849
+LilyPond,834
+Io,817
+COBOL,806
+"Ren'Py",784
+Brainfuck,778
+PigLatin,769
+SQL,744
+LLVM,738
+"POV-Ray SDL",721
+MQL4,694
+UnrealScript,681
+AspectJ,670
+BlitzBasic,647
+Thrift,613
+VCL,592
+Mercury,582
+XC,563
+MQL5,559
+ooc,543
+Nemerle,516
+Arc,509
+Bison,497
+Red,486
+CLIPS,485
+Slash,485
+Ceylon,482
+MAXScript,474
+LSL,465
+Terra,459
+Ballerina,450
+"Propeller Spin",386
+Papyrus,379
+Mako,365
+Isabelle,347
+Xojo,341
+"Inform 7",331
+DTrace,322
+EmberScript,321
+Augeas,308
+Cirru,306
+Lean,302
+Dylan,298
+Frege,296
+Nextflow,290
+SMT,288
+NewLisp,283
+Pony,280
+Boo,279
+Alloy,277
+Factor,272
+Monkey,269
+Limbo,265
+BlitzMax,261
+Hy,257
+NCL,253
+Uno,250
+AngelScript,248
+ChucK,243
+P4,242
+Parrot,242
+REALbasic,239
+"Component Pascal",230
+Stan,229
+GAMS,222
+TLA,222
+XS,219
+J,207
+"Common Workflow Language",206
+Bluespec,205
+Turing,200
+FLUX,191
+RPC,187
+KRL,186
+"DCPU-16 ASM",178
+Chapel,176
+APL,175
+"Ragel in Ruby Host",173
+Nu,169
+Clean,168
+Mask,168
+Self,166
+Opa,164
+Oxygene,163
+RenderScript,160
+"IGOR Pro",159
+Oz,154
+ATS,148
+E,143
+Volt,136
+wdl,130
+Zephir,128
+Mirah,126
+Ecl,124
+"Modula-2",124
+XProc,124
+Pike,122
+PowerBuilder,118
+NetLinx,115
+PogoScript,114
+"Grammatical Framework",111
+"Csound Document",109
+Cycript,109
+"SRecode Template",104
+Metal,103
+LOLCODE,102
+sed,102
+Glyph,99
+eC,98
+Fantom,97
+q,97
+Pan,94
+Ring,92
+wisp,87
+"Cap'n Proto",84
+GDB,84
+Jasmin,84
+MTML,84
+JSONiq,80
+CWeb,77
+Shen,77
+Genshi,74
+ECL,68
+HyPhy,65
+PicoLisp,60
+UrWeb,58
+Fancy,56
+Cool,55
+Clarion,51
+LoomScript,49
+Ragel,49
+Meson,43
+Harbour,42
+Kit,40
+Logtalk,39
+Ox,37
+Golo,36
+Rouge,33
+Grace,32
+Nit,31
+REXX,31
+Ioke,30
+Jolie,30
+X10,28
+WebIDL,27
+mupad,26
+Pep8,25
+Dogescript,23
+TXL,23
+Zimpl,23
+Click,22
+DataWeave,18
+RMarkdown,17
+"Filebench WML",16
+XPages,16
+EQ,13
+Redcode,13
+"TI Program",13
+Charity,12
+Csound,11
+"Modula-3",11
+Nearley,11
+"Csound Score",8
+LFE,7
+Omgrofl,7
+"KiCad Layout",5
+Markdown,5
+Genie,4
+JFlex,4
+Moocode,3
+Opal,3
+Tea,3
+HiveQL,2
+"Max/MSP",2
+"Module Management System",2
+ShellSession,2
+Befunge,1
+"DCPU-16 Assembly",1
+RUNOFF,1
+reStructuredText,1
