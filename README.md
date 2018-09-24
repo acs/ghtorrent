@@ -17,16 +17,16 @@ To load the GitHub projects data in Elasticsearch:
 
 You will need around 4h to complete the above steps.
 
-## Evolution in time of projects
+## Evolution in time of new projects
 
 ![](images/projects.png?raw=true)
 
 
-## Evolution in time of non fork projects
+## Evolution in time of non fork new projects
 
 ![](images/projects-no-fork.png?raw=true)
 
-## Evolution in time of the top 10 languages
+## Evolution in time of new projects top 10 languages
 
 ![](images/top10-languages.png?raw=true)
 
