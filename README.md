@@ -32,6 +32,12 @@ You will need around 4h to complete the above steps.
 
 The language detection is based on https://github.com/github/linguist
 
-## List with all languages
+## Ranking with all languages 
 
 [CSV data](all_languages.csv)
+
+Compare with:
+
+* [PYPL PopularitY of Programming Language](http://pypl.github.io/PYPL.html)
+* [TIOBE Index](https://www.tiobe.com/tiobe-index//)
+* [GitHub Octoverse](https://octoverse.github.com/)
