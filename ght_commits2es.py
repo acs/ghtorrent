@@ -62,10 +62,12 @@ def fetch_commits(es_index, db_con):
     commits_table = "commits2018"  # Working only with commits in 2018
 
     commits_sql = """
-        SELECT  c.created_at, sha, login as author_login, company, url
+        SELECT  c.created_at, sha, login as author_login, company, url, forked_from, language
         FROM %s c, projects p, users u
         WHERE c.project_id = p.id AND c.author_id = u.id
     """ % commits_table
+
+    # commits_sql += " LIMIT 1000000"  # for debugging
 
     logging.info("Getting commits: %s" % commits_sql)
     db_cursor = db_con.cursor(pymysql.cursors.SSCursor)
@@ -83,7 +85,10 @@ def fetch_commits(es_index, db_con):
             "sha": commit_row[1],
             "author_login": commit_row[2],
             "author_org": commit_row[3],
-            "url": project_url
+            "url": project_url,
+            "repo_forked_from": commit_row[5],
+            "repo_language": commit_row[6],
+            "repo_name": owner+"_"+repo
         }
         item = {
             "_index": es_index,
