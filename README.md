@@ -8,8 +8,12 @@ understand better the life of Open Source software projects.
 It is in the initial conception phase so probably only useful
 to exchange ideas and early prototypes.
 
-Don't hesitate to open GitHub issues if you have any kind of problem or you
+## Feedback
+
+Don't hesitate to [open GitHub issues](https://github.com/acs/ghtorrent/issues) if you have any kind of problem or you
 want to feedback or exchange thoughts.
+
+## Requirements
 
 It is needed a machine with 16GB of RAM, 4 cores and 1TB of hard disk to execute all without issues.
 
@@ -17,13 +21,15 @@ You need also a running Elasticsearch and Kibana.
 
 And you will need around 12h of compute time (<1h human time) to execute all processes.
 
+## Initial Step
+
 The first step is to download [GHTorrent data](http://ghtorrent.org/downloads.html). The testing has been done with: 
 [mysql-2018-09-01.tar.gz](http://ghtorrent-downloads.ewi.tudelft.nl/mysql/mysql-2018-09-01.tar.gz).
 
 Now, there are two analysis. The first open loading the projects table
 and the second one loading projects, users and commits.
 
-## Projects (Repositories analysis)
+## Projects (Repositories) analysis
 
 To load the GitHub projects data in Elasticsearch:
 
