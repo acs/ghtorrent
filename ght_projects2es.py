@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Copy data from GHTorrent to Elasticsearch
+# Copy data from GHTorrent projects to Elasticsearch
 #
 # Copyright (C) Bitergia
 #
@@ -108,7 +108,7 @@ def fetch_projects(es_index, db_con, language=None):
 
 def publish_projects(es_url, es_index, db_con, language):
     """
-    Publish all the scores for the metrics in assessment
+    Publish all the projects
 
     :param es_url: URL for Elasticsearch
     :param es_index: index in Elasticsearch
